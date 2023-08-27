@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      overflow: hidden; /* Impede a rolagem vertical */
+    }
+    .intro-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    .intro {
+      font-size: 10vw; /* Aumentado o tamanho para dispositivos móveis */
+      font-weight: bold;
+      animation: typing 6s steps(10000);
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .welcome-message {
+      font-size: 5vw; /* Aumentado o tamanho para dispositivos móveis */
+      font-weight: bold;
+      margin-top: 5vw;
+      display: none;
+    }
+    .button {
+      margin-top: 5vw;
+      display: none;
+    }
+    .proceed-button {
+      background-color: #ff0000;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 2vw 4vw;
+      font-size: 4vw;
+      cursor: pointer;
+    }
+    .line-break {
+      display: block;
+      margin-top: 3vw; /* Espaçamento ajustado para dispositivos móveis */
+      font-size: 3vw; /* Tamanho ajustado para dispositivos móveis */
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="intro-container">
+    <div class="intro">
+      HARD
+      <span class="line-break"></span>
+      LIFE
+    </div>
+    <div class="welcome-message">
+       seja bem-vindos.
+    </div>
+    <div class="button">
+      <button class="proceed-button" onclick="location.href='index.html'">Prosseguir</button>
+    </div>
+  </div>
+  <script>
+    const introElement = document.querySelector('.intro');
+    const welcomeMessageElement = document.querySelector('.welcome-message');
+    const buttonElement = document.querySelector('.button');
+
+    introElement.addEventListener('animationend', () => {
+      introElement.style.display = 'none';
+      welcomeMessageElement.style.display = 'block';
+      buttonElement.style.display = 'block';
+    });
+  </script>
+  <style>
+    @keyframes typing {
+      0% {
+        width: 0;
+      }
+      100% {
+        width: 100%;
+      }
+    }
+  </style>
+</body>
+</html>

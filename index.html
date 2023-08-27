@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ... (seu estilo CSS aqui) ... */
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fff; /* Fundo branco */
+      color: #000; /* Texto preto */
+    }
+    .products-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .product {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 20px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      background-color: #f7f7f7;
+      max-width: 300px;
+      text-align: center;
+    }
+    .product-image {
+      max-width: 100%; /* Imagem preenchendo a largura */
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+    .product-title {
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+    .product-description {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    .product-price {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    .details-link,
+    .contact-button {
+      color: #007bff;
+      text-decoration: none;
+      margin-top: 10px;
+      display: block;
+      font-size: 18px;
+    }
+    /* Estilo para a janela modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    .modal-content {
+      background-color: #fff;
+      max-width: 80%; /* Largura da janela modal */
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .modal-image {
+      max-width: 100%; /* Imagem preenchendo a largura */
+      height: auto;
+      border-radius: 10px;
+    }
+    .back-button {
+      background-color: #ccc;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+      margin-top: 10px;
+    }
+    .whatsapp-bar {
+      background-color: #3bff00;
+      padding: 5px;
+      border-radius: 5px;
+      color: #fff;
+      text-align: center;
+    }
+    .footer {
+      background-color: #fff;
+      padding: 20px;
+    }
+    .product-button {
+      background-color: #000;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="products-container">
+    <div class="product">
+      <img src="foto1.png" alt="Camiseta 1 Frente" class="product-image">
+      <img src="verso1.png" alt="Camiseta 1 Verso" class="product-image">
+      <h2 class="product-title">Camiseta Modelo 1</h2>
+      <p class="product-description">
+        calma respira que estou escrevendo as linhas do código 
+      </p>
+      <p class="product-price">R$ 49,90</p>
+      <a href="#" class="details-link" onclick="openModal('foto1.png', 'em breve ')">Ver Detalhes</a>
+      <a href="https://api.whatsapp.com/send?phone=+5519999015294&text=Olá%2C%20acabei%20de%20ver%20seu%20site%20e%20me%20interessei%20pela%20sua%20camiseta%20tem%20disponível%3F" class="contact-button">Fale Conosco no WhatsApp</a>
+    </div>
+
+    <div class="product">
+      <img src="foto2.png" alt="Camiseta 2 Frente" class="product-image">
+      <img src="verso2.png" alt="Camiseta 2 Verso" class="product-image">
+      <h2 class="product-title">Camiseta Modelo 2</h2>
+      <p class="product-description">
+        se alguém manja de desing e quiser fazer um modelos pra mim
+      </p>
+      <p class="product-price">R$ 59,90</p>
+      <a href="#" class="details-link" onclick="openModal('foto2.png', 'logo iremos inaugurar ')">Ver Detalhes</a>
+      <a href="https://api.whatsapp.com/send?phone=+551999901-5294&text=Olá%2C%20acabei%20de%20ver%20seu%20site%20e%20me%20interessei%20pela%20sua%20camiseta%20tem%20disponível%3F" class="contact-button">Fale Conosco no WhatsApp</a>
+    </div>
+
+    <!-- Repita o bloco acima para adicionar mais camisetas -->
+    <div class="product">
+      <img src="foto3.png" alt="Camiseta 3 Frente" class="product-image">
+      <img src="verso3.png" alt="Camiseta 3 Verso" class="product-image">
+      <h2 class="product-title">Camiseta Modelo 3</h2>
+      <p class="product-description">
+        Mais uma descrição de camiseta.
+      </p>
+      <p class="product-price">R$ 69,90</p>
+      <a href="#" class="details-link" onclick="openModal('foto3.png', 'hard life agradecer esse site esta sendo construído ainda.')">Ver Detalhes</a>
+      <a href="https://api.whatsapp.com/send?phone=+5519999015294&text=Olá%2C%20acabei%20de%20ver%20seu%20site%20e%20me%20interessei%20pela%20sua%20camiseta%20tem%20disponível%3F" class="contact-button">Fale Conosco no WhatsApp</a>
+    </div>
+  </div>
+
+  <!-- Janela modal -->
+  <div class="modal" id="modal">
+    <div class="modal-content" id="modal-content">
+      <!-- O conteúdo da janela modal será carregado aqui -->
+    </div>
+  </div>
+
+  <script>
+    function openModal(imageUrl, description) {
+      var modal = document.getElementById('modal');
+      var modalContent = document.getElementById('modal-content');
+      
+      modalContent.innerHTML = `
+        <img src="${imageUrl}" alt="Camiseta" class="modal-image">
+        <p>${description}</p>
+        <a href="#" class="back-button" onclick="closeModal()">Voltar</a>
+      `;
+
+      modal.style.display = 'block';
+    }
+
+    function closeModal() {
+      var modal = document.getElementById('modal');
+      modal.style.display = 'none';
+    }
+  </script>
+  <div class="footer">
+    <a href="produtos.html" class="product-button">Produtos</a>
+  </div>
+</body>
+</html>

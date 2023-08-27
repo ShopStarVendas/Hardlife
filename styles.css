@@ -1,0 +1,75 @@
+/* ... (seu estilo CSS existente) ... */
+
+/* Defina a cor verde mais forte */
+.whatsapp-green {
+  color: ;#000000 /* Verde mais forte do WhatsApp */
+}
+
+.details-link,
+.contact-button {
+  text-decoration: none;
+  margin-top: 10px;
+  display: inline-block;
+  padding: 5px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.details-link {
+  color: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.details-link:hover,
+.contact-button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.details-link:focus,
+.contact-button:focus {
+  outline: none;
+}
+
+.contact-button {
+  color: #25d366;
+  border: 1px solid #25d366;
+  background-color: rgba(37, 211, 102, 0.1);
+  position: relative; /* Para posicionar o ícone */
+  padding-left: 40px; /* Espaçamento para o ícone */
+}
+
+.contact-button::before {
+  content: "\f232"; /* Código do ícone do WhatsApp */
+  font-family: "Font Awesome"; /* Font Awesome é necessária para o ícone */
+  position: absolute;
+  left: 10px;
+  font-size: 18px;
+  line-height: 1;
+}
+
+    body {
+      text-align: 50px;
+      font-family: Arial, sans-serif;
+      background-color: ##ffea; /* Fundo preto */
+      color: #fff; /* Texto branco */
+      margin: 0;
+      padding: 0;
+    }
+    .footer {
+      padding: 50px;
+    }
+    .product-button {
+      background-color: rgba(0, 0, 0, 0.2); /* Botão preto fraco */
+      color: #fff; /* Texto branco */
+      border: 1px solid #333; /* Borda preta */
+      border-radius: 10px; /* Arredondamento da borda */
+      padding: 10px 20px;
+      font-size: 24px;
+      text-decoration: none;
+      transition: background-color 0.3s, color 0.3s; /* Transição de cores */
+    }
+    .product-button:hover {
+      background-color: #333; /* Cor de fundo mais escura ao passar o mouse */
+      color: #fff; /* Texto branco */
+    }
+  
